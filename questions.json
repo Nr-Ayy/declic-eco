@@ -1,0 +1,67 @@
+[
+  {
+    "Titre": "Impact du numérique",
+    "TypeJeu": "QCM",
+    "Question": "Sur l'ensemble de son cycle de vie, quelle étape contribue généralement le plus à l'impact environnemental d'un ordinateur professionnel ?",
+    "Choix1": "Sa fabrication",
+    "Choix2": "Son utilisation électrique",
+    "Choix3": "Son transport jusqu'à l'utilisateur",
+    "Choix4": "Son traitement en fin de vie",
+    "BonneReponse": "Sa fabrication",
+    "Explication": "Le savais-tu ? Une grande partie des impacts d'un équipement numérique est liée à sa fabrication, notamment à l'extraction et à la transformation des matières premières.",
+    "Theme": "Numérique",
+    "Source": "ADEME"
+  },
+  {
+    "Titre": "Recyclage",
+    "TypeJeu": "VraiFaux",
+    "Question": "Un produit techniquement recyclable sera nécessairement recyclé s'il est jeté dans la bonne poubelle.",
+    "Choix1": "Vrai",
+    "Choix2": "Faux",
+    "Choix3": "",
+    "Choix4": "",
+    "BonneReponse": "Faux",
+    "Explication": "Le savais-tu ? La recyclabilité ne garantit pas le recyclage effectif. Celui-ci dépend aussi du tri, de la collecte et de l'existence d'une filière adaptée.",
+    "Theme": "Déchets",
+    "Source": "ADEME"
+  },
+  {
+    "Titre": "Consommation numérique",
+    "TypeJeu": "QCM",
+    "Question": "Pour réduire l'impact environnemental lié aux équipements numériques d'une entreprise, quelle stratégie est généralement la plus pertinente ?",
+    "Choix1": "Renouveler fréquemment le parc avec des appareils plus récents",
+    "Choix2": "Allonger la durée d'utilisation des équipements lorsqu'ils répondent encore aux besoins",
+    "Choix3": "Remplacer systématiquement les ordinateurs fixes par des portables",
+    "Choix4": "Augmenter la capacité de stockage de tous les équipements",
+    "BonneReponse": "Allonger la durée d'utilisation des équipements lorsqu'ils répondent encore aux besoins",
+    "Explication": "Le savais-tu ? La fabrication représente une part importante des impacts du numérique. Prolonger la durée de vie des équipements permet donc d'éviter des renouvellements prématurés.",
+    "Theme": "Numérique",
+    "Source": "ADEME"
+  },
+  {
+    "Titre": "Eau potable",
+    "TypeJeu": "VraiFaux",
+    "Question": "Réduire une consommation d'eau permet aussi indirectement de réduire certaines consommations d'énergie.",
+    "Choix1": "Vrai",
+    "Choix2": "Faux",
+    "Choix3": "",
+    "Choix4": "",
+    "BonneReponse": "Vrai",
+    "Explication": "Le savais-tu ? Le captage, le traitement, la distribution puis l'assainissement de l'eau nécessitent eux-mêmes de l'énergie.",
+    "Theme": "Eau",
+    "Source": "ADEME"
+  },
+  {
+    "Titre": "Déchets",
+    "TypeJeu": "QCM",
+    "Question": "Dans une démarche de réduction des déchets, quelle action doit généralement être privilégiée avant le recyclage ?",
+    "Choix1": "Réduire la production du déchet à la source",
+    "Choix2": "Augmenter le nombre de points de collecte",
+    "Choix3": "Trier davantage de catégories de déchets",
+    "Choix4": "Stocker les déchets plus longtemps avant leur collecte",
+    "BonneReponse": "Réduire la production du déchet à la source",
+    "Explication": "Le savais-tu ? La prévention et la réduction à la source interviennent avant le recyclage dans la hiérarchie des modes de traitement des déchets.",
+    "Theme": "Déchets",
+    "Source": "ADEME"
+  }
+]
