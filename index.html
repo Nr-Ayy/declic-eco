@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Déclic Éco</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7f5;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      width: 100%;
+      max-width: 500px;
+      padding: 40px 25px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .leaf {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    button {
+      margin-top: 25px;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="leaf">🌱</div>
+
+    <h1>Déclic Éco</h1>
+
+    <p>
+      Testez vos connaissances sur les écogestes
+      à travers des questions courtes et ludiques.
+    </p>
+
+    <p>
+      5 questions • Quelques minutes
+    </p>
+
+    <button onclick="commencerQuiz()">
+      Commencer
+    </button>
+
+  </div>
+
+  <script>
+    function commencerQuiz() {
+      alert("Déclic Éco fonctionne !");
+    }
+  </script>
+
+</body>
+</html>
