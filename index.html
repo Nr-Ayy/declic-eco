@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,10 @@
 <title>Déclic Éco</title>
 
 <style>
-* { box-sizing: border-box; }
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -29,16 +33,23 @@ body {
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
 }
 
-.center { text-align: center; }
+.center {
+    text-align: center;
+}
 
-h1 { font-size: 38px; margin: 10px 0; }
+h1 {
+    font-size: 38px;
+    margin: 10px 0;
+}
 
 h2 {
     font-size: 23px;
     line-height: 1.4;
 }
 
-.leaf { font-size: 50px; }
+.leaf {
+    font-size: 50px;
+}
 
 .subtitle {
     color: #555;
@@ -46,11 +57,17 @@ h2 {
     font-size: 17px;
 }
 
+
+/* PROGRESSION */
+
 .progress {
     font-size: 14px;
     color: #666;
     margin-bottom: 20px;
 }
+
+
+/* RÉPONSES */
 
 .choice {
     display: block;
@@ -65,7 +82,9 @@ h2 {
     text-align: left;
 }
 
-.choice:hover { background: #f4f7f5; }
+.choice:hover {
+    background: #f4f7f5;
+}
 
 .choice:disabled {
     cursor: default;
@@ -81,6 +100,9 @@ h2 {
     border-color: #d78b8b;
 }
 
+
+/* BOUTONS */
+
 .main-button {
     border: none;
     border-radius: 12px;
@@ -90,6 +112,9 @@ h2 {
     cursor: pointer;
     margin-top: 20px;
 }
+
+
+/* EXPLICATION */
 
 .explanation {
     display: none;
@@ -105,6 +130,8 @@ h2 {
     font-size: 12px;
     color: #777;
 }
+
+
 /* ÉCRAN RÉSULTAT */
 
 #resultat {
@@ -118,24 +145,30 @@ h2 {
 
 #resultat h1 {
     font-size: 30px;
-    margin: 5px 0 20px;
+    margin: 5px 0 22px;
 }
 
 #resultat #score {
     font-size: 42px;
-    margin: 0 0 8px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    line-height: 1.1;
 }
 
 #resultat #messageScore {
     max-width: 400px;
-    margin: 0 auto 25px;
+    margin: 0 auto 26px;
     font-size: 16px;
+    line-height: 1.5;
     color: #666;
 }
 
+
+/* MESSAGE FINAL */
+
 .final-message {
     max-width: 410px;
-    margin: 0 auto 5px;
+    margin: 0 auto;
     padding: 20px 10px 5px;
     border-top: 1px solid #e4e4e4;
 }
@@ -143,7 +176,7 @@ h2 {
 .final-message strong {
     display: block;
     font-size: 18px;
-    margin-bottom: 8px;
+    margin-bottom: 9px;
     color: #222;
 }
 
@@ -158,19 +191,57 @@ h2 {
     margin-top: 25px;
     padding: 14px 34px;
 }
-#quiz, #resultat {
+
+
+/* MASQUER QUIZ ET RÉSULTAT AU DÉPART */
+
+#quiz,
+#resultat {
     display: none;
 }
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    #resultat h1 {
+        font-size: 28px;
+    }
+
+    #resultat #score {
+        font-size: 38px;
+    }
+}
+
 </style>
+
 </head>
+
 
 <body>
 
 <div class="card">
 
+
     <!-- ACCUEIL -->
+
     <div id="accueil" class="center">
+
         <div class="leaf">🌱</div>
+
         <h1>Déclic Éco</h1>
 
         <p class="subtitle">
@@ -178,18 +249,28 @@ h2 {
             à travers 5 questions courtes et ludiques.
         </p>
 
-        <p><strong>5 questions • Quelques minutes</strong></p>
+        <p>
+            <strong>5 questions • Quelques minutes</strong>
+        </p>
 
-        <button class="main-button" onclick="commencerQuiz()">
+        <button
+            class="main-button"
+            onclick="commencerQuiz()">
             Commencer
         </button>
+
     </div>
 
 
+
     <!-- QUIZ -->
+
     <div id="quiz">
 
-        <div class="progress" id="progression"></div>
+        <div
+            class="progress"
+            id="progression">
+        </div>
 
         <div id="theme"></div>
 
@@ -197,10 +278,20 @@ h2 {
 
         <div id="choix"></div>
 
-        <div class="explanation" id="explication">
+
+        <div
+            class="explanation"
+            id="explication">
+
             <div id="texteExplication"></div>
-            <div class="source" id="source"></div>
+
+            <div
+                class="source"
+                id="source">
+            </div>
+
         </div>
+
 
         <button
             class="main-button"
@@ -213,33 +304,51 @@ h2 {
     </div>
 
 
+
     <!-- RESULTAT -->
-    <div id="resultat" class="center">
+
+    <div
+        id="resultat"
+        class="center">
 
         <div class="leaf">🌱</div>
 
         <h1>Session terminée !</h1>
-        
+
         <h2 id="score"></h2>
 
-    <p id="messageScore" class="subtitle"></p>
+        <p id="messageScore"></p>
 
-    <p class="subtitle">
-        <strong>Chaque geste compte.</strong><br>
-        Tu viens déjà d’apprendre quelque chose.<br>
-        Reviens tenter le défi et partage un écogeste avec ton équipe.
-    </p>
 
-        <button class="main-button" onclick="commencerQuiz()">
+        <div class="final-message">
+
+            <strong>
+                Chaque geste compte.
+            </strong>
+
+            <span>
+                Tu viens déjà d’apprendre quelque chose.<br>
+                Reviens tenter le défi et partage un écogeste avec ton équipe.
+            </span>
+
+        </div>
+
+
+        <button
+            class="main-button"
+            onclick="commencerQuiz()">
             Rejouer
         </button>
 
     </div>
 
+
 </div>
 
 
+
 <script>
+
 
 let toutesLesQuestions = [];
 let questionsQuiz = [];
@@ -247,169 +356,352 @@ let indexQuestion = 0;
 let score = 0;
 
 
-/* Charger questions.json */
+
+/* CHARGER QUESTIONS.JSON */
 
 fetch("questions.json")
+
     .then(response => {
+
         if (!response.ok) {
-            throw new Error("Impossible de charger les questions.");
+            throw new Error(
+                "Impossible de charger les questions."
+            );
         }
+
         return response.json();
+
     })
+
     .then(data => {
+
         toutesLesQuestions = data;
+
     })
+
     .catch(error => {
+
         console.error(error);
-        alert("Erreur lors du chargement des questions.");
+
+        alert(
+            "Erreur lors du chargement des questions."
+        );
+
     });
 
 
-/* Mélanger un tableau */
+
+/* MÉLANGER LES QUESTIONS */
 
 function melanger(tableau) {
-    return [...tableau].sort(() => Math.random() - 0.5);
+
+    return [...tableau]
+        .sort(() => Math.random() - 0.5);
+
 }
 
 
-/* Commencer */
+
+/* COMMENCER LE QUIZ */
 
 function commencerQuiz() {
 
     if (toutesLesQuestions.length === 0) {
-        alert("Les questions ne sont pas encore chargées.");
+
+        alert(
+            "Les questions ne sont pas encore chargées."
+        );
+
         return;
     }
 
-    questionsQuiz = melanger(toutesLesQuestions).slice(0, 5);
+
+    questionsQuiz =
+        melanger(toutesLesQuestions)
+        .slice(0, 5);
+
 
     indexQuestion = 0;
     score = 0;
 
-    document.getElementById("accueil").style.display = "none";
-    document.getElementById("resultat").style.display = "none";
-    document.getElementById("quiz").style.display = "block";
+
+    document
+        .getElementById("accueil")
+        .style.display = "none";
+
+    document
+        .getElementById("resultat")
+        .style.display = "none";
+
+    document
+        .getElementById("quiz")
+        .style.display = "block";
+
 
     afficherQuestion();
+
 }
 
 
-/* Afficher une question */
+
+/* AFFICHER UNE QUESTION */
 
 function afficherQuestion() {
 
-    const q = questionsQuiz[indexQuestion];
+    const q =
+        questionsQuiz[indexQuestion];
 
-    document.getElementById("progression").textContent =
-        "Question " + (indexQuestion + 1) + " sur " + questionsQuiz.length;
 
-    document.getElementById("theme").textContent =
+    document
+        .getElementById("progression")
+        .textContent =
+        "Question "
+        + (indexQuestion + 1)
+        + " sur "
+        + questionsQuiz.length;
+
+
+    document
+        .getElementById("theme")
+        .textContent =
         q.Theme ? q.Theme : "";
 
-    document.getElementById("question").textContent = q.Question;
 
-    document.getElementById("explication").style.display = "none";
-    document.getElementById("suivant").style.display = "none";
+    document
+        .getElementById("question")
+        .textContent =
+        q.Question;
 
-    const zoneChoix = document.getElementById("choix");
+
+    document
+        .getElementById("explication")
+        .style.display = "none";
+
+
+    document
+        .getElementById("suivant")
+        .style.display = "none";
+
+
+    const zoneChoix =
+        document.getElementById("choix");
+
+
     zoneChoix.innerHTML = "";
 
+
     const choix = [
+
         q.Choix1,
         q.Choix2,
         q.Choix3,
         q.Choix4
-    ].filter(c => c && c.trim() !== "");
+
+    ].filter(
+        c => c && c.trim() !== ""
+    );
+
 
     choix.forEach(reponse => {
 
-        const bouton = document.createElement("button");
+        const bouton =
+            document.createElement("button");
+
 
         bouton.className = "choice";
+
         bouton.textContent = reponse;
 
+
         bouton.onclick = function() {
-            verifierReponse(bouton, reponse);
+
+            verifierReponse(
+                bouton,
+                reponse
+            );
+
         };
 
+
         zoneChoix.appendChild(bouton);
+
     });
+
 }
 
 
-/* Vérifier réponse */
 
-function verifierReponse(boutonClique, reponse) {
+/* VÉRIFIER LA RÉPONSE */
 
-    const q = questionsQuiz[indexQuestion];
+function verifierReponse(
+    boutonClique,
+    reponse
+) {
 
-    const boutons = document.querySelectorAll(".choice");
+    const q =
+        questionsQuiz[indexQuestion];
+
+
+    const boutons =
+        document.querySelectorAll(
+            ".choice"
+        );
+
 
     boutons.forEach(b => {
+
         b.disabled = true;
 
-        if (b.textContent === q.BonneReponse) {
-            b.classList.add("correct");
+
+        if (
+            b.textContent ===
+            q.BonneReponse
+        ) {
+
+            b.classList.add(
+                "correct"
+            );
+
         }
+
     });
 
-    if (reponse === q.BonneReponse) {
+
+    if (
+        reponse ===
+        q.BonneReponse
+    ) {
+
         score++;
-    } else {
-        boutonClique.classList.add("wrong");
+
+    }
+    else {
+
+        boutonClique
+            .classList
+            .add("wrong");
+
     }
 
-    document.getElementById("texteExplication").textContent =
+
+    document
+        .getElementById(
+            "texteExplication"
+        )
+        .textContent =
         q.Explication;
 
-    document.getElementById("source").textContent =
-        q.Source ? "Source : " + q.Source : "";
 
-    document.getElementById("explication").style.display = "block";
-    document.getElementById("suivant").style.display = "inline-block";
+    document
+        .getElementById("source")
+        .textContent =
+        q.Source
+            ? "Source : " + q.Source
+            : "";
+
+
+    document
+        .getElementById(
+            "explication"
+        )
+        .style.display = "block";
+
+
+    document
+        .getElementById("suivant")
+        .style.display = "inline-block";
+
 }
 
 
-/* Question suivante */
+
+/* QUESTION SUIVANTE */
 
 function questionSuivante() {
 
     indexQuestion++;
 
-    if (indexQuestion < questionsQuiz.length) {
+
+    if (
+        indexQuestion <
+        questionsQuiz.length
+    ) {
+
         afficherQuestion();
-    } else {
-        afficherResultat();
+
     }
+    else {
+
+        afficherResultat();
+
+    }
+
 }
 
 
-/* Résultat */
+
+/* AFFICHER LE RÉSULTAT */
 
 function afficherResultat() {
 
-    document.getElementById("quiz").style.display = "none";
-    document.getElementById("resultat").style.display = "block";
+    document
+        .getElementById("quiz")
+        .style.display = "none";
 
-    document.getElementById("score").textContent =
-        score + " / " + questionsQuiz.length;
+
+    document
+        .getElementById("resultat")
+        .style.display = "block";
+
+
+    document
+        .getElementById("score")
+        .textContent =
+        score
+        + " / "
+        + questionsQuiz.length;
+
 
     let message = "";
 
-    if (score === questionsQuiz.length) {
-        message = "Excellent ! Vous maîtrisez le sujet 🌱";
-    }
-    else if (score >= 3) {
-        message = "Bien joué ! Encore quelques découvertes à faire.";
-    }
-    else {
-        message = "Chaque question est une occasion d'en apprendre davantage.";
+
+    if (
+        score ===
+        questionsQuiz.length
+    ) {
+
+        message =
+            "Excellent ! Vous maîtrisez le sujet 🌱";
+
     }
 
-    document.getElementById("messageScore").textContent = message;
+    else if (
+        score >= 3
+    ) {
+
+        message =
+            "Bien joué ! Encore quelques découvertes à faire.";
+
+    }
+
+    else {
+
+        message =
+            "Chaque question est une occasion d'en apprendre davantage.";
+
+    }
+
+
+    document
+        .getElementById("messageScore")
+        .textContent =
+        message;
+
 }
+
 
 </script>
 
 </body>
+
 </html>
