@@ -58,7 +58,9 @@ h2 {
 }
 
 
-/* PROGRESSION */
+/* =========================
+   PROGRESSION
+========================= */
 
 .progress {
     font-size: 14px;
@@ -67,7 +69,9 @@ h2 {
 }
 
 
-/* RÉPONSES */
+/* =========================
+   CHOIX / RÉPONSES
+========================= */
 
 .choice {
     display: block;
@@ -101,7 +105,9 @@ h2 {
 }
 
 
-/* BOUTONS */
+/* =========================
+   BOUTONS
+========================= */
 
 .main-button {
     border: none;
@@ -114,7 +120,9 @@ h2 {
 }
 
 
-/* EXPLICATION */
+/* =========================
+   EXPLICATION
+========================= */
 
 .explanation {
     display: none;
@@ -132,64 +140,156 @@ h2 {
 }
 
 
-/* ÉCRAN RÉSULTAT */
+/* =========================
+   ÉCRAN FINAL
+========================= */
 
 #resultat {
-    padding: 5px 10px 10px;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 5px;
 }
 
-#resultat .leaf {
-    font-size: 44px;
+.result-icon {
+    font-size: 48px;
     margin-bottom: 8px;
 }
 
+.result-small {
+    margin: 0 0 7px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #777;
+}
+
 #resultat h1 {
+    margin: 0 0 22px;
     font-size: 30px;
-    margin: 5px 0 22px;
 }
 
-#resultat #score {
-    font-size: 42px;
+
+/* CERCLE DU SCORE */
+
+.score-circle {
+    width: 145px;
+    height: 145px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #f1f7f2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.score-circle #score {
+    display: block;
+    margin: 0;
+
+    font-size: 40px;
     font-weight: 700;
-    margin: 0 0 10px;
-    line-height: 1.1;
+    line-height: 1;
 }
 
-#resultat #messageScore {
-    max-width: 400px;
-    margin: 0 auto 26px;
-    font-size: 16px;
-    line-height: 1.5;
+.score-circle small {
+    margin-top: 8px;
+    font-size: 12px;
     color: #666;
 }
 
 
-/* MESSAGE FINAL */
+/* MESSAGE SELON LE SCORE */
 
-.final-message {
-    max-width: 410px;
-    margin: 0 auto;
-    padding: 20px 10px 5px;
-    border-top: 1px solid #e4e4e4;
-}
+.result-message {
+    max-width: 350px;
+    margin: 0 auto 22px;
 
-.final-message strong {
-    display: block;
-    font-size: 18px;
-    margin-bottom: 9px;
-    color: #222;
-}
+    font-size: 16px;
+    line-height: 1.5;
 
-.final-message span {
-    display: block;
-    font-size: 15px;
-    line-height: 1.6;
     color: #555;
 }
 
-#resultat .main-button {
-    margin-top: 25px;
-    padding: 14px 34px;
+
+/* PETITE SÉPARATION */
+
+.result-separator {
+    width: 45px;
+    height: 3px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 10px;
+
+    background: #dce8df;
+}
+
+
+/* MESSAGE ÉCO */
+
+.eco-final {
+    margin-bottom: 22px;
+}
+
+.eco-final strong {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 17px;
+}
+
+.eco-final p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: #666;
+}
+
+
+/* BOUTON REJOUER */
+
+.replay-button {
+    width: 100%;
+    max-width: 280px;
+
+    border: none;
+    border-radius: 14px;
+
+    padding: 16px 25px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background: #e8f2ea;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.replay-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(0,0,0,0.08);
+}
+
+
+/* PETITE PHRASE SOUS LE BOUTON */
+
+.share-text {
+    margin: 13px 0 0;
+
+    font-size: 12px;
+    color: #888;
 }
 
 
@@ -201,7 +301,9 @@ h2 {
 }
 
 
-/* MOBILE */
+/* =========================
+   VERSION MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
@@ -218,11 +320,20 @@ h2 {
     }
 
     #resultat h1 {
-        font-size: 28px;
+        font-size: 27px;
     }
 
-    #resultat #score {
-        font-size: 38px;
+    .score-circle {
+        width: 130px;
+        height: 130px;
+    }
+
+    .score-circle #score {
+        font-size: 36px;
+    }
+
+    .replay-button {
+        max-width: 100%;
     }
 }
 
@@ -236,7 +347,9 @@ h2 {
 <div class="card">
 
 
-    <!-- ACCUEIL -->
+    <!-- =====================
+         ACCUEIL
+    ====================== -->
 
     <div id="accueil" class="center">
 
@@ -256,14 +369,18 @@ h2 {
         <button
             class="main-button"
             onclick="commencerQuiz()">
+
             Commencer
+
         </button>
 
     </div>
 
 
 
-    <!-- QUIZ -->
+    <!-- =====================
+         QUIZ
+    ====================== -->
 
     <div id="quiz">
 
@@ -298,47 +415,90 @@ h2 {
             id="suivant"
             onclick="questionSuivante()"
             style="display:none;">
+
             Question suivante
+
         </button>
 
     </div>
 
 
 
-    <!-- RESULTAT -->
+    <!-- =====================
+         RÉSULTAT
+    ====================== -->
 
     <div
         id="resultat"
         class="center">
 
-        <div class="leaf">🌱</div>
 
-        <h1>Session terminée !</h1>
+        <div
+            class="result-icon"
+            id="resultIcon">
 
-        <h2 id="score"></h2>
+            🌱
 
-        <p id="messageScore"></p>
+        </div>
 
 
-        <div class="final-message">
+        <p class="result-small">
+            DÉFI TERMINÉ
+        </p>
+
+
+        <h1 id="resultTitle">
+            Bien joué !
+        </h1>
+
+
+        <div class="score-circle">
+
+            <span id="score"></span>
+
+            <small>
+                bonnes réponses
+            </small>
+
+        </div>
+
+
+        <p
+            id="messageScore"
+            class="result-message">
+        </p>
+
+
+        <div class="result-separator"></div>
+
+
+        <div class="eco-final">
 
             <strong>
-                Chaque geste compte.
+                🌿 Chaque geste compte
             </strong>
 
-            <span>
-                Tu viens déjà d’apprendre quelque chose.<br>
-                Reviens tenter le défi et partage un écogeste avec ton équipe.
-            </span>
+            <p>
+                Tu viens déjà d'apprendre quelque chose.<br>
+                Prêt à faire encore mieux ?
+            </p>
 
         </div>
 
 
         <button
-            class="main-button"
+            class="replay-button"
             onclick="commencerQuiz()">
-            Rejouer
+
+            ↻ &nbsp; Rejouer le défi
+
         </button>
+
+
+        <p class="share-text">
+            Et pourquoi pas défier un collègue ?
+        </p>
+
 
     </div>
 
@@ -357,16 +517,20 @@ let score = 0;
 
 
 
-/* CHARGER QUESTIONS.JSON */
+/* =========================
+   CHARGER QUESTIONS.JSON
+========================= */
 
 fetch("questions.json")
 
     .then(response => {
 
         if (!response.ok) {
+
             throw new Error(
                 "Impossible de charger les questions."
             );
+
         }
 
         return response.json();
@@ -391,7 +555,9 @@ fetch("questions.json")
 
 
 
-/* MÉLANGER LES QUESTIONS */
+/* =========================
+   MÉLANGER LES QUESTIONS
+========================= */
 
 function melanger(tableau) {
 
@@ -402,9 +568,12 @@ function melanger(tableau) {
 
 
 
-/* COMMENCER LE QUIZ */
+/* =========================
+   COMMENCER LE QUIZ
+========================= */
 
 function commencerQuiz() {
+
 
     if (toutesLesQuestions.length === 0) {
 
@@ -413,6 +582,7 @@ function commencerQuiz() {
         );
 
         return;
+
     }
 
 
@@ -422,6 +592,7 @@ function commencerQuiz() {
 
 
     indexQuestion = 0;
+
     score = 0;
 
 
@@ -429,9 +600,11 @@ function commencerQuiz() {
         .getElementById("accueil")
         .style.display = "none";
 
+
     document
         .getElementById("resultat")
         .style.display = "none";
+
 
     document
         .getElementById("quiz")
@@ -444,9 +617,12 @@ function commencerQuiz() {
 
 
 
-/* AFFICHER UNE QUESTION */
+/* =========================
+   AFFICHER UNE QUESTION
+========================= */
 
 function afficherQuestion() {
+
 
     const q =
         questionsQuiz[indexQuestion];
@@ -498,32 +674,41 @@ function afficherQuestion() {
         q.Choix4
 
     ].filter(
+
         c => c && c.trim() !== ""
+
     );
 
 
     choix.forEach(reponse => {
 
+
         const bouton =
             document.createElement("button");
 
 
-        bouton.className = "choice";
-
-        bouton.textContent = reponse;
-
-
-        bouton.onclick = function() {
-
-            verifierReponse(
-                bouton,
-                reponse
-            );
-
-        };
+        bouton.className =
+            "choice";
 
 
-        zoneChoix.appendChild(bouton);
+        bouton.textContent =
+            reponse;
+
+
+        bouton.onclick =
+            function() {
+
+                verifierReponse(
+                    bouton,
+                    reponse
+                );
+
+            };
+
+
+        zoneChoix.appendChild(
+            bouton
+        );
 
     });
 
@@ -531,12 +716,15 @@ function afficherQuestion() {
 
 
 
-/* VÉRIFIER LA RÉPONSE */
+/* =========================
+   VÉRIFIER LA RÉPONSE
+========================= */
 
 function verifierReponse(
     boutonClique,
     reponse
 ) {
+
 
     const q =
         questionsQuiz[indexQuestion];
@@ -549,6 +737,7 @@ function verifierReponse(
 
 
     boutons.forEach(b => {
+
 
         b.disabled = true;
 
@@ -567,6 +756,7 @@ function verifierReponse(
     });
 
 
+
     if (
         reponse ===
         q.BonneReponse
@@ -575,6 +765,7 @@ function verifierReponse(
         score++;
 
     }
+
     else {
 
         boutonClique
@@ -582,6 +773,7 @@ function verifierReponse(
             .add("wrong");
 
     }
+
 
 
     document
@@ -592,6 +784,7 @@ function verifierReponse(
         q.Explication;
 
 
+
     document
         .getElementById("source")
         .textContent =
@@ -600,24 +793,33 @@ function verifierReponse(
             : "";
 
 
+
     document
         .getElementById(
             "explication"
         )
-        .style.display = "block";
+        .style.display =
+        "block";
+
 
 
     document
-        .getElementById("suivant")
-        .style.display = "inline-block";
+        .getElementById(
+            "suivant"
+        )
+        .style.display =
+        "inline-block";
 
 }
 
 
 
-/* QUESTION SUIVANTE */
+/* =========================
+   QUESTION SUIVANTE
+========================= */
 
 function questionSuivante() {
+
 
     indexQuestion++;
 
@@ -630,6 +832,7 @@ function questionSuivante() {
         afficherQuestion();
 
     }
+
     else {
 
         afficherResultat();
@@ -640,18 +843,23 @@ function questionSuivante() {
 
 
 
-/* AFFICHER LE RÉSULTAT */
+/* =========================
+   AFFICHER LE RÉSULTAT
+========================= */
 
 function afficherResultat() {
 
+
     document
         .getElementById("quiz")
-        .style.display = "none";
+        .style.display =
+        "none";
 
 
     document
         .getElementById("resultat")
-        .style.display = "block";
+        .style.display =
+        "block";
 
 
     document
@@ -662,38 +870,100 @@ function afficherResultat() {
         + questionsQuiz.length;
 
 
+
+    let titre = "";
+
     let message = "";
 
+    let icone = "";
+
+
+
+    /* 5 / 5 */
 
     if (
         score ===
         questionsQuiz.length
     ) {
 
+
+        icone =
+            "🌟";
+
+
+        titre =
+            "Incroyable !";
+
+
         message =
-            "Excellent ! Vous maîtrisez le sujet 🌱";
+            "Un sans-faute ! Les écogestes n'ont presque plus de secrets pour toi.";
 
     }
+
+
+    /* 3 OU 4 / 5 */
 
     else if (
         score >= 3
     ) {
 
+
+        icone =
+            "👏";
+
+
+        titre =
+            "Bien joué !";
+
+
         message =
-            "Bien joué ! Encore quelques découvertes à faire.";
+            "Tu es sur la bonne voie. Quelques découvertes t'attendent encore.";
 
     }
+
+
+    /* 0, 1 OU 2 / 5 */
 
     else {
 
+
+        icone =
+            "🌱";
+
+
+        titre =
+            "À toi de rejouer !";
+
+
         message =
-            "Chaque question est une occasion d'en apprendre davantage.";
+            "Tu viens déjà d'apprendre de nouvelles choses. Retente le défi pour améliorer ton score !";
 
     }
 
 
+
     document
-        .getElementById("messageScore")
+        .getElementById(
+            "resultIcon"
+        )
+        .textContent =
+        icone;
+
+
+
+    document
+        .getElementById(
+            "resultTitle"
+        )
+        .textContent =
+        titre;
+
+
+
+    document
+        .getElementById(
+            "messageScore"
+        )
         .textContent =
         message;
 
@@ -701,6 +971,7 @@ function afficherResultat() {
 
 
 </script>
+
 
 </body>
 
