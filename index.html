@@ -555,6 +555,24 @@ h2 {
 
         </div>
 
+        <button
+    class="main-button"
+    onclick="ouvrirFormulaireParticipation()">
+
+    ✓ Enregistrer ma participation
+
+</button>
+
+<br>
+
+<button
+    class="replay-button"
+    onclick="commencerQuiz()">
+
+    ↻ &nbsp; Rejouer le défi
+
+</button>
+
 
         <button
             class="replay-button"
@@ -1119,7 +1137,20 @@ function afficherResultat() {
         message;
 
 }
+function ouvrirFormulaireParticipation() {
 
+    const baseUrl =
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=qIpRtD4NEE28d0zX3t40Rj2PpjFaJC1Ortf769LyHupUNzMzQldKR0tSUDA4VVBLN1Q0UEc5MTdGWi4u";
+
+    const url =
+        baseUrl
+        + "&r6ba17e5e52b646f89722c4ba4623e246="
+        + encodeURIComponent('"' + serviceSelectionne + '"')
+        + "&rfc48fbc326ee4ac887e49a91b93a8276="
+        + encodeURIComponent(score + "/" + questionsQuiz.length);
+
+    window.open(url, "_blank");
+}
 
 </script>
 
