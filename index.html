@@ -791,7 +791,7 @@ function afficherQuestion() {
     document
         .getElementById("theme")
         .textContent =
-        q.Theme ? q.Theme : "";
+        q.Theme?.Value || q.Theme || "";
 
 
     document
