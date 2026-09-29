@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Déclic Éco</title>
-
 <style>
-
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -23,7 +18,6 @@ body {
     align-items: center;
     padding: 20px;
 }
-
 .card {
     background: white;
     width: 100%;
@@ -32,16 +26,13 @@ body {
     border-radius: 20px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
 }
-
 .center {
     text-align: center;
 }
-
 h1 {
     font-size: 38px;
     margin: 10px 0;
 }
-
 h2 {
     font-size: 23px;
     line-height: 1.4;
@@ -50,24 +41,20 @@ h2 {
 .leaf {
     font-size: 50px;
 }
-
 .subtitle {
     color: #555;
     line-height: 1.5;
     font-size: 17px;
 }
-
-
+    
 /* =========================
    PROGRESSION
 ========================= */
-
 .progress {
     font-size: 14px;
     color: #666;
     margin-bottom: 20px;
 }
-
 
 /* =========================
    CHOIX / RÉPONSES
@@ -98,12 +85,10 @@ h2 {
     background: #e5f5e9;
     border-color: #7bb88a;
 }
-
 .wrong {
     background: #fdeaea;
     border-color: #d78b8b;
 }
-
 
 /* =========================
    SÉLECTION DU SERVICE
@@ -115,22 +100,18 @@ h2 {
     font-size: 17px;
     transition: 0.15s ease;
 }
-
 .service-choice:hover {
     background: #f1f8f4;
 }
-
 .service-selected {
     background: #e5f5e9;
     border: 2px solid #7bb88a;
     font-weight: bold;
 }
-
 #continuerService:disabled {
     opacity: 0.45;
     cursor: not-allowed;
 }
-
 
 /* =========================
    BOUTONS
@@ -165,8 +146,7 @@ h2 {
     font-size: 12px;
     color: #777;
 }
-
-
+    
 /* =========================
    ÉCRAN FINAL
 ========================= */
@@ -194,7 +174,6 @@ h2 {
     margin: 0 0 22px;
     font-size: 30px;
 }
-
 
 /* CERCLE DU SCORE */
 
@@ -225,7 +204,6 @@ h2 {
     color: #666;
 }
 
-
 /* MESSAGE SELON LE SCORE */
 
 .result-message {
@@ -236,7 +214,6 @@ h2 {
     color: #555;
 }
 
-
 /* PETITE SÉPARATION */
 
 .result-separator {
@@ -246,7 +223,6 @@ h2 {
     border-radius: 10px;
     background: #dce8df;
 }
-
 
 /* MESSAGE ÉCO */
 
@@ -266,8 +242,6 @@ h2 {
     line-height: 1.6;
     color: #666;
 }
-
-
 /* BOUTON REJOUER */
 
 .replay-button {
@@ -290,7 +264,6 @@ h2 {
     box-shadow: 0 7px 18px rgba(0,0,0,0.08);
 }
 
-
 /* PETITE PHRASE SOUS LE BOUTON */
 
 .share-text {
@@ -299,7 +272,6 @@ h2 {
     color: #888;
 }
 
-
 /* MASQUER LES ÉCRANS AU DÉPART */
 
 #services,
@@ -307,7 +279,6 @@ h2 {
 #resultat {
     display: none;
 }
-
 
 /* =========================
    VERSION MOBILE
@@ -349,12 +320,9 @@ h2 {
 
 </head>
 
-
 <body>
 
 <div class="card">
-
-
     <!-- =====================
          ACCUEIL
     ====================== -->
@@ -373,18 +341,12 @@ h2 {
         <p>
             <strong>5 questions • Quelques minutes</strong>
         </p>
-
         <button
             class="main-button"
             onclick="afficherServices()">
-
             Commencer
-
         </button>
-
     </div>
-
-
 
     <!-- =====================
          CHOIX DU SERVICE
@@ -443,10 +405,7 @@ h2 {
             Continuer
 
         </button>
-
     </div>
-
-
 
     <!-- =====================
          QUIZ
@@ -464,8 +423,6 @@ h2 {
         <h2 id="question"></h2>
 
         <div id="choix"></div>
-
-
         <div
             class="explanation"
             id="explication">
@@ -478,8 +435,6 @@ h2 {
             </div>
 
         </div>
-
-
         <button
             class="main-button"
             id="suivant"
@@ -489,10 +444,7 @@ h2 {
             Question suivante
 
         </button>
-
     </div>
-
-
 
     <!-- =====================
          RÉSULTAT
@@ -502,7 +454,6 @@ h2 {
         id="resultat"
         class="center">
 
-
         <div
             class="result-icon"
             id="resultIcon">
@@ -511,16 +462,13 @@ h2 {
 
         </div>
 
-
         <p class="result-small">
             DÉFI TERMINÉ
         </p>
 
-
         <h1 id="resultTitle">
             Bien joué !
         </h1>
-
 
         <div class="score-circle">
 
@@ -532,15 +480,12 @@ h2 {
 
         </div>
 
-
         <p
             id="messageScore"
             class="result-message">
         </p>
 
-
         <div class="result-separator"></div>
-
 
         <div class="eco-final">
 
@@ -554,7 +499,6 @@ h2 {
             </p>
 
         </div>
-
    
     <button
     class="main-button"
@@ -563,7 +507,6 @@ h2 {
     ✓ Enregistrer ma participation
 
 </button>
-
 <br>
 
 <button
@@ -578,16 +521,11 @@ h2 {
     Et pourquoi pas défier un collègue ?
 </p>
 
-
     </div>
-
 
 </div>
 
-
-
 <script>
-
 
 let toutesLesQuestions = [];
 let questionsQuiz = [];
@@ -597,28 +535,19 @@ let score = 0;
 /* Service choisi par le participant */
 let serviceSelectionne = "";
 
-
-
 /* =========================
    CHARGER QUESTIONS.JSON
 ========================= */
-
+    
 fetch("questions.json")
-
     .then(response => {
-
         if (!response.ok) {
-
             throw new Error(
                 "Impossible de charger les questions."
             );
-
         }
-
         return response.json();
-
     })
-
     .then(data => {
 
         toutesLesQuestions = data;
@@ -636,7 +565,6 @@ fetch("questions.json")
     });
 
 
-
 /* =========================
    AFFICHER LES SERVICES
 ========================= */
@@ -652,7 +580,6 @@ function afficherServices() {
         .style.display = "block";
 
 }
-
 
 
 /* =========================
@@ -686,8 +613,6 @@ function selectionnerService(
 
 }
 
-
-
 /* =========================
    CONTINUER VERS LE QUIZ
 ========================= */
@@ -695,20 +620,13 @@ function selectionnerService(
 function continuerVersQuiz() {
 
     if (!serviceSelectionne) {
-
         return;
-
     }
-
     document
         .getElementById("services")
         .style.display = "none";
-
     commencerQuiz();
-
 }
-
-
 
 /* =========================
    MÉLANGER LES QUESTIONS
@@ -718,29 +636,20 @@ function melanger(tableau) {
 
     return [...tableau]
         .sort(() => Math.random() - 0.5);
-
 }
-
-
 
 /* =========================
    COMMENCER LE QUIZ
 ========================= */
 
 function commencerQuiz() {
-
-
     if (toutesLesQuestions.length === 0) {
-
         alert(
             "Les questions ne sont pas encore chargées."
         );
-
         return;
 
     }
-
-
     questionsQuiz =
         melanger(toutesLesQuestions)
         .slice(0, 5);
@@ -772,10 +681,7 @@ function commencerQuiz() {
 
 
     afficherQuestion();
-
 }
-
-
 
 /* =========================
    AFFICHER UNE QUESTION
@@ -824,35 +730,22 @@ function afficherQuestion() {
 
 
     zoneChoix.innerHTML = "";
-
-
     const choix = [
 
         q.Choix1,
         q.Choix2,
         q.Choix3,
         q.Choix4
-
     ].filter(
 
         c => c && c.trim() !== ""
-
     );
-
-
     choix.forEach(reponse => {
-
-
         const bouton =
             document.createElement("button");
 
-
-        bouton.className =
-            "choice";
-
-
-        bouton.textContent =
-            reponse;
+        bouton.className = "choice";
+        bouton.textContent = reponse;
 
 
         bouton.onclick =
@@ -864,8 +757,6 @@ function afficherQuestion() {
                 );
 
             };
-
-
         zoneChoix.appendChild(
             bouton
         );
@@ -873,8 +764,6 @@ function afficherQuestion() {
     });
 
 }
-
-
 
 /* =========================
    VÉRIFIER LA RÉPONSE
@@ -884,58 +773,34 @@ function verifierReponse(
     boutonClique,
     reponse
 ) {
-
-
     const q =
         questionsQuiz[indexQuestion];
-
-
     const boutons =
         document.querySelectorAll(
             "#choix .choice"
         );
-
-
     boutons.forEach(b => {
-
-
         b.disabled = true;
-
-
         if (
             b.textContent ===
             q.BonneReponse
         ) {
-
-            b.classList.add(
-                "correct"
-            );
-
+            b.classList.add("correct");
         }
 
     });
 
-
-
     if (
-        reponse ===
-        q.BonneReponse
+        reponse === q.BonneReponse
     ) {
-
         score++;
-
     }
-
     else {
-
         boutonClique
             .classList
             .add("wrong");
 
     }
-
-
-
     document
         .getElementById(
             "texteExplication"
@@ -943,17 +808,12 @@ function verifierReponse(
         .textContent =
         q.Explication;
 
-
-
     document
         .getElementById("source")
         .textContent =
         q.Source
             ? "Source : " + q.Source
             : "";
-
-
-
     document
         .getElementById(
             "explication"
@@ -972,36 +832,22 @@ function verifierReponse(
 
 }
 
-
-
 /* =========================
    QUESTION SUIVANTE
 ========================= */
 
 function questionSuivante() {
-
-
     indexQuestion++;
-
-
     if (
         indexQuestion <
         questionsQuiz.length
     ) {
-
         afficherQuestion();
-
     }
-
     else {
-
         afficherResultat();
-
     }
-
 }
-
-
 
 /* =========================
    AFFICHER LE RÉSULTAT
@@ -1037,96 +883,47 @@ function afficherResultat() {
 
     let icone = "";
 
-
-
     /* 5 / 5 */
 
-    if (
-        score ===
-        questionsQuiz.length
-    ) {
-
-
-        icone =
-            "🌟";
-
-
-        titre =
-            "Incroyable !";
-
-
-        message =
-            "Un sans-faute ! Les écogestes n'ont presque plus de secrets pour toi.";
-
+    if (score === questionsQuiz.length) 
+    {
+        icone = "🌟";
+        titre = "Incroyable !";
+        message ="Un sans-faute ! Les écogestes n'ont presque plus de secrets pour toi.";
     }
-
-
     /* 3 OU 4 / 5 */
 
     else if (
         score >= 3
     ) {
-
-
-        icone =
-            "👏";
-
-
-        titre =
-            "Bien joué !";
-
-
-        message =
-            "Tu es sur la bonne voie. Quelques découvertes t'attendent encore.";
-
+        icone ="👏";
+        titre = "Bien joué !";
+        message ="Tu es sur la bonne voie. Quelques découvertes t'attendent encore.";
     }
-
-
     /* 0, 1 OU 2 / 5 */
 
     else {
 
 
-        icone =
-            "🌱";
-
-
-        titre =
-            "À toi de rejouer !";
-
-
-        message =
-            "Tu viens déjà d'apprendre de nouvelles choses. Retente le défi pour améliorer ton score !";
-
+        icone ="🌱";
+        titre = "À toi de rejouer !";
+        message = "Tu viens déjà d'apprendre de nouvelles choses. Retente le défi pour améliorer ton score !";
     }
-
-
-
     document
-        .getElementById(
-            "resultIcon"
-        )
+        .getElementById("resultIcon")
         .textContent =
         icone;
 
-
-
     document
-        .getElementById(
-            "resultTitle"
-        )
+        .getElementById("resultTitle")
         .textContent =
         titre;
 
-
-
+    
     document
-        .getElementById(
-            "messageScore"
-        )
+        .getElementById("messageScore")
         .textContent =
         message;
-
 }
 function ouvrirFormulaireParticipation() {
 
@@ -1144,8 +941,5 @@ function ouvrirFormulaireParticipation() {
 }
 
 </script>
-
-
 </body>
-
 </html>
