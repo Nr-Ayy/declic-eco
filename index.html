@@ -106,6 +106,33 @@ h2 {
 
 
 /* =========================
+   SÉLECTION DU SERVICE
+========================= */
+
+.service-choice {
+    text-align: center;
+    border: 1px solid #a9d8c7;
+    font-size: 17px;
+    transition: 0.15s ease;
+}
+
+.service-choice:hover {
+    background: #f1f8f4;
+}
+
+.service-selected {
+    background: #e5f5e9;
+    border: 2px solid #7bb88a;
+    font-weight: bold;
+}
+
+#continuerService:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+
+/* =========================
    BOUTONS
 ========================= */
 
@@ -174,25 +201,19 @@ h2 {
 .score-circle {
     width: 145px;
     height: 145px;
-
     margin: 0 auto 20px;
-
     border-radius: 50%;
-
     background: #f1f7f2;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     box-shadow: 0 8px 25px rgba(0,0,0,0.06);
 }
 
 .score-circle #score {
     display: block;
     margin: 0;
-
     font-size: 40px;
     font-weight: 700;
     line-height: 1;
@@ -210,10 +231,8 @@ h2 {
 .result-message {
     max-width: 350px;
     margin: 0 auto 22px;
-
     font-size: 16px;
     line-height: 1.5;
-
     color: #555;
 }
 
@@ -223,11 +242,8 @@ h2 {
 .result-separator {
     width: 45px;
     height: 3px;
-
     margin: 0 auto 20px;
-
     border-radius: 10px;
-
     background: #dce8df;
 }
 
@@ -246,10 +262,8 @@ h2 {
 
 .eco-final p {
     margin: 0;
-
     font-size: 14px;
     line-height: 1.6;
-
     color: #666;
 }
 
@@ -259,19 +273,13 @@ h2 {
 .replay-button {
     width: 100%;
     max-width: 280px;
-
     border: none;
     border-radius: 14px;
-
     padding: 16px 25px;
-
     font-size: 16px;
     font-weight: bold;
-
     cursor: pointer;
-
     background: #e8f2ea;
-
     transition:
         transform 0.15s ease,
         box-shadow 0.15s ease;
@@ -287,14 +295,14 @@ h2 {
 
 .share-text {
     margin: 13px 0 0;
-
     font-size: 12px;
     color: #888;
 }
 
 
-/* MASQUER QUIZ ET RÉSULTAT AU DÉPART */
+/* MASQUER LES ÉCRANS AU DÉPART */
 
+#services,
 #quiz,
 #resultat {
     display: none;
@@ -368,9 +376,71 @@ h2 {
 
         <button
             class="main-button"
-            onclick="commencerQuiz()">
+            onclick="afficherServices()">
 
             Commencer
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================
+         CHOIX DU SERVICE
+    ====================== -->
+
+    <div id="services" class="center">
+
+        <h2>Dans quel service travailles-tu ?</h2>
+
+        <p class="subtitle">
+            Juste pour mieux comprendre qui participe
+        </p>
+
+        <button
+            class="choice service-choice"
+            onclick="selectionnerService(this, 'Client voyageur')">
+            Client voyageur
+        </button>
+
+        <button
+            class="choice service-choice"
+            onclick="selectionnerService(this, 'Performance production')">
+            Performance production
+        </button>
+
+        <button
+            class="choice service-choice"
+            onclick="selectionnerService(this, 'Relations sociales')">
+            Relations sociales
+        </button>
+
+        <button
+            class="choice service-choice"
+            onclick="selectionnerService(this, 'Safe contrôle et temps réel')">
+            Safe contrôle et temps réel
+        </button>
+
+        <button
+            class="choice service-choice"
+            onclick="selectionnerService(this, 'Technique et patrimoine')">
+            Technique et patrimoine
+        </button>
+
+        <button
+            class="choice service-choice"
+            onclick="selectionnerService(this, 'Autre')">
+            Autre
+        </button>
+
+        <button
+            class="main-button"
+            id="continuerService"
+            onclick="continuerVersQuiz()"
+            disabled>
+
+            Continuer
 
         </button>
 
@@ -515,6 +585,9 @@ let questionsQuiz = [];
 let indexQuestion = 0;
 let score = 0;
 
+/* Service choisi par le participant */
+let serviceSelectionne = "";
+
 
 
 /* =========================
@@ -552,6 +625,79 @@ fetch("questions.json")
         );
 
     });
+
+
+
+/* =========================
+   AFFICHER LES SERVICES
+========================= */
+
+function afficherServices() {
+
+    document
+        .getElementById("accueil")
+        .style.display = "none";
+
+    document
+        .getElementById("services")
+        .style.display = "block";
+
+}
+
+
+
+/* =========================
+   SÉLECTIONNER UN SERVICE
+========================= */
+
+function selectionnerService(
+    bouton,
+    service
+) {
+
+    serviceSelectionne = service;
+
+    document
+        .querySelectorAll(".service-choice")
+        .forEach(boutonService => {
+
+            boutonService
+                .classList
+                .remove("service-selected");
+
+        });
+
+    bouton
+        .classList
+        .add("service-selected");
+
+    document
+        .getElementById("continuerService")
+        .disabled = false;
+
+}
+
+
+
+/* =========================
+   CONTINUER VERS LE QUIZ
+========================= */
+
+function continuerVersQuiz() {
+
+    if (!serviceSelectionne) {
+
+        return;
+
+    }
+
+    document
+        .getElementById("services")
+        .style.display = "none";
+
+    commencerQuiz();
+
+}
 
 
 
@@ -598,6 +744,11 @@ function commencerQuiz() {
 
     document
         .getElementById("accueil")
+        .style.display = "none";
+
+
+    document
+        .getElementById("services")
         .style.display = "none";
 
 
@@ -732,7 +883,7 @@ function verifierReponse(
 
     const boutons =
         document.querySelectorAll(
-            ".choice"
+            "#choix .choice"
         );
 
 
